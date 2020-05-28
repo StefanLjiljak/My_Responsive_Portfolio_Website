@@ -34,6 +34,15 @@ $background-opacity: 0.9;
     }
 }
 
+// Setting text color using Saas function because i need return value that's not possible to achieve with mixin
+@function set-text-color($color) {
+    @if(lightness($color) > 40) {
+        @return #000;
+    } @else {
+        @return #fff;
+    }
+}
+
 // Media query mixins
 @mixin mediaSm {
     @media (max-width: 500px) {

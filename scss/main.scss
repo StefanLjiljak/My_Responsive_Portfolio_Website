@@ -1,6 +1,5 @@
 @import 'config';
 @import 'menu';
-@import 'mobile';
 
 // reset
 * {
@@ -12,7 +11,7 @@
 body {
     @include background;
     background: $primary-color;
-    color: #fff;
+    color: set-text-color($primary-color);
     height: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.5;
@@ -51,13 +50,23 @@ color: $secondary-color;
 
 main {
     padding: 4rem;
-    height: 100%;
+    // initially was a height: 100% but changed to bellow in order to have sticky footer
+    min-height: calc(100vh - 60px);
 
     .icons {
         margin-top: 1rem;
 
         a {
             padding: 0.4rem;
+
+            &:hover {
+                color: $secondary-color;
+                @include easeOut();
+            }
+        }
+
+        .fa-linkedin {
+            color: #0e76a8;
 
             &:hover {
                 color: $secondary-color;
@@ -76,3 +85,57 @@ main {
         }
     }
 }
+
+.about-info {
+    display: grid;
+    gap: 30px;
+    grid-template-areas: 
+    'bioimage bio bio bio'
+    'job1 job2 job3 job4';
+    grid-template-columns: repeat(4, 1fr);
+
+    .bio-image {
+        grid-area: bioimage;
+        margin: auto;
+        border-radius: 50%;
+        border: $secondary-color 3px solid;
+    }
+    
+    .bio {
+        grid-area: bio;
+        font-size: 1.5rem;
+    }
+    
+    .job-1 {
+        grid-area: job1;
+    }
+    
+    .job-2 {
+        grid-area: job2;
+    }
+    
+    .job-3 {
+        grid-area: job3;
+    }
+    
+    .job-4 {
+        grid-area: job4;
+    }
+    
+    .job {
+        background: lighten($color: $primary-color, $amount: 5);
+        padding: 0.5rem;
+        border-bottom: $secondary-color 5px solid;
+    }
+}
+
+#main-footer {
+    text-align: center;
+    padding: 1rem;
+    background: darken($color: $primary-color, $amount: 10);
+    color: set-text-color($primary-color);
+    height: 60px;
+}
+
+// always put media queries for mobile and rest devices at the bottom in order to render after initial CSS
+@import 'mobile';
