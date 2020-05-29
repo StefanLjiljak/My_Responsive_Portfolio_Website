@@ -75,11 +75,27 @@
 // Smartphones
 
 @include mediaSm {
+    // Home
     main#home h1 {
         margin-top: 10vh;
     }
 
+    // About
+    main#about h1 {
+        font-size: 4rem;
+    }
+
+    // Work
     .projects {
         grid-template-columns: 1fr;
+    }
+
+    // Contact page
+    main#contact h1 {
+        font-size: 4rem;
+    }
+
+    .boxes > div {
+        font-size: 1.5rem;
     }
 }
