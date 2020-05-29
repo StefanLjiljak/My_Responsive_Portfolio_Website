@@ -2,6 +2,6 @@
 
 https://stefan-ljiljak-portfolio.netlify.app/
 
-https://StefanLjiljak.github.io/my_responsive_portfolio_website
+https://stefanljiljak.github.io/My_Responsive_Portfolio_Website/
 
 - svakog dana u svakom pogledu sve vise napredujem ;)
